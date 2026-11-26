@@ -1,0 +1,33 @@
+{
+  "name": "chamados-ti",
+  "version": "1.0.0",
+  "description": "Sistema de organização de chamados de TI (MVC com Node.js, Express, EJS e Sequelize)",
+  "main": "app.js",
+  "engines": {
+    "node": ">=20.0.0 <23.0.0"},
+  "scripts": {
+    "start": "node app.js",
+    "prestart": "node seeders/seed.js",
+    "build": "npm rebuild sqlite3 --build-from-source",
+    "dev": "node --watch app.js",
+    "seed": "node seeders/seed.js"
+  },
+  "keywords": [
+    "helpdesk",
+    "chamados",
+    "ti",
+    "express",
+    "sequelize",
+    "ejs"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "cookie-parser": "^1.4.7",
+    "ejs": "^7.0.1",
+    "firebase-admin": "^12.7.0",
+    "express": "^5.2.1",
+    "method-override": "^3.0.0",
+    "sequelize": "^6.37.8",
+    "sqlite3": "^6.0.1"
+  }
+}

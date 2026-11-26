@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Login - HelpDesk TI</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <main class="auth-page">
+    <section class="auth-card card">
+      <div class="brand auth-brand">
+        <span class="brand-logo">⚡</span>
+        <span class="brand-text">HelpDesk<strong>TI</strong></span>
+      </div>
+
+      <h1>Entrar</h1>
+      <p class="subtitle">Entre para abrir e acompanhar seus chamados.</p>
+
+      <div id="auth-error" class="toast toast-error" hidden></div>
+
+      <form id="login-form">
+        <div class="field">
+          <label for="nome">Nome</label>
+          <input id="nome" type="text" placeholder="Usado somente ao criar a conta">
+        </div>
+
+        <div class="field">
+          <label for="email">E-mail</label>
+          <input id="email" type="email" required>
+        </div>
+
+        <div class="field">
+          <label for="senha">Senha</label>
+          <input id="senha" type="password" required minlength="6">
+        </div>
+
+        <button class="btn btn-primary btn-block" type="submit">Entrar</button>
+        <button class="btn btn-secondary btn-block" type="button" id="signup-submit">Criar conta</button>
+      </form>
+
+      <p class="auth-divider">ou</p>
+      <button class="btn btn-ghost btn-block" id="google-submit" type="button">Entrar com Google</button>
+    </section>
+  </main>
+
+  <script>
+    window.firebaseConfig = <%- JSON.stringify(firebaseConfig) %>;
+    window.authNext = <%- JSON.stringify(next || '/') %>;
+  </script>
+  <script type="module" src="/js/login.js"></script>
+</body>
+</html>

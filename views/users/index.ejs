@@ -1,0 +1,4 @@
+<%- include('../partials/header') %>
+<header class="page-header"><div><p class="eyebrow">Administração</p><h1>Gestão de usuários</h1><p class="subtitle">Controle os perfis e permissões de acesso.</p></div></header>
+<section class="card card-flush"><div class="table-wrap"><table class="table"><thead><tr><th>Usuário</th><th>E-mail</th><th>Perfil</th><th>Ação</th></tr></thead><tbody><% usuarios.forEach(function (u) { %><tr><td><strong><%= u.nome %></strong></td><td><%= u.email %></td><td><form method="POST" action="/users/<%= u.id %>?_method=PATCH"><select name="perfil"><% ['user','tecnico','admin'].forEach(function (role) { %><option value="<%= role %>" <%= u.perfil === role ? 'selected' : '' %>><%= role %></option><% }) %></select></td><td><button class="btn btn-secondary" type="submit">Salvar</button></form></td></tr><% }) %></tbody></table></div></section>
+<%- include('../partials/footer') %>
